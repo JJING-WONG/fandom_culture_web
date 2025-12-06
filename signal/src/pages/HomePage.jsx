@@ -95,6 +95,19 @@ export default function HomePage() {
       <Header />
       <Carousel />
 
+      <Section>
+        <SectionTitle>📢 공지사항</SectionTitle>
+        <CardRow>
+          {noticeDummy.map((notice) => (
+            <Card key={notice.id} onClick={() => navigate(`/notice/${notice.id}`)}>
+              <CardTitle>{notice.title}</CardTitle>
+              <CardInfo>{notice.date}</CardInfo>
+            </Card>
+          ))}
+        </CardRow>
+        <Button onClick={() => navigate("/notice")}>공지 전체보기</Button>
+      </Section>
+
       {/* ======================
             섹션 1 - 사건분석연구소
       ======================= */}
@@ -136,18 +149,7 @@ export default function HomePage() {
       {/* ======================
             섹션 3 - 공지사항
       ======================= */}
-      <Section>
-        <SectionTitle>📢 공지사항</SectionTitle>
-        <CardRow>
-          {noticeDummy.map((notice) => (
-            <Card key={notice.id} onClick={() => navigate(`/notice/${notice.id}`)}>
-              <CardTitle>{notice.title}</CardTitle>
-              <CardInfo>{notice.date}</CardInfo>
-            </Card>
-          ))}
-        </CardRow>
-        <Button onClick={() => navigate("/notice")}>공지 전체보기</Button>
-      </Section>
+
 
       {/* ======================
             섹션 4 - 기록저장실

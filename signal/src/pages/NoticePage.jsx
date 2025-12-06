@@ -81,27 +81,33 @@ const notices = [
     id: 1,
     title: "2025 팬미팅 서울 개최 안내",
     category: "팬미팅",
-    date: "2025-02-14",
+    date: "2026-07-14",
     place: "서울 올림픽홀",
   },
   {
     id: 2,
     title: "신 OST 'Remember Me' 발매 일정",
     category: "OST",
-    date: "2025-03-01",
+    date: "2026-07-01",
   },
   {
     id: 3,
     title: "드라마 비하인드 전시회 오픈 안내",
     category: "전시회",
-    date: "2025-04-10",
+    date: "2026-07-10",
     place: "서울 전시센터",
   },
   {
     id: 4,
     title: "팬 참여 이벤트 - ‘사건 파일 찾기’",
     category: "이벤트",
-    date: "2025-02-28",
+    date: "2026-07-28",
+  },
+  {
+    id: 5,
+    title: "팝업스토어 OPEN 안내",
+    category: "이벤트",
+    date: "2026-05-28",
   },
 ];
 
