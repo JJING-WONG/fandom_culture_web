@@ -1,35 +1,43 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+// src/App.jsx
+import { Routes, Route } from "react-router-dom";
 
-function App() {
-  const [count, setCount] = useState(0)
+import HomePage from "./pages/HomePage";
+import TeamPage from "./pages/Teampage";
+import LabPage from "./pages/LabPage";
+import NoticePage from "./pages/NoticePage";
+import NoticeDetailPage from "./pages/NoticeDetailPage";
+import ArchivePage from "./pages/ArchivePage";
+import ArchiveDetailPage from "./pages/ArchiveDetailPage";
+import PetitionPage from "./pages/PetitionPage";
+import MdPage from "./pages/MdPage";
+import WritePage from "./pages/WritePage";
+import DetailPage from "./pages/DetailPage";
+import EditPage from "./pages/EditPage";
+import PetitionWritePage from "./pages/PetitionWritePage";
+import PetitionDetailPage from "./pages/PetitionDetailPage";
+import PetitionEditPage from "./pages/PetitionEditPage";
+import MdDetailPage from "./pages/MdDetailPage";
 
+export default function App() {
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+    <Routes>
+      <Route path="/" element={<HomePage />} />
 
-export default App
+      <Route path="/team" element={<TeamPage />} />
+      <Route path="/lab" element={<LabPage />} />
+      <Route path="/notice" element={<NoticePage />} />
+      <Route path="/notice/:id" element={<NoticeDetailPage />} />
+      <Route path="/archive" element={<ArchivePage />} />
+      <Route path="/archive/:season/:epId" element={<ArchiveDetailPage />} />
+      <Route path="/petition" element={<PetitionPage />} />
+      <Route path="/petition/write" element={<PetitionWritePage />} />
+      <Route path="/petition/:id" element={<PetitionDetailPage />} />
+      <Route path="/petition/edit/:id" element={<PetitionEditPage />} />
+      <Route path="/md" element={<MdPage />} />
+      <Route path="/md/:id" element={<MdDetailPage />} />
+      <Route path="/lab/write" element={<WritePage />} />
+      <Route path="/lab/:id" element={<DetailPage />} />
+      <Route path="/lab/edit/:id" element={<EditPage />} />
+    </Routes>
+  );
+}
