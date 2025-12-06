@@ -1,3 +1,5 @@
+// src/pages/ArchivePage.jsx
+
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import styled from "styled-components";
@@ -86,10 +88,22 @@ const AvailableTag = styled.div`
 ======================= */
 
 const season1Data = [
-  { id: 1, title: "1화 - 공원 실종 사건" },
-  { id: 2, title: "2화 - 지하철 추격전" },
-  { id: 3, title: "3화 - 사라진 목격자" },
-  { id: 4, title: "4화 - 범인의 단서" },
+  { id: 1, title: "1화 - 김윤정 유괴 및 살인 사건, 서형준 살인 사건" },
+  { id: 2, title: "2화 - 김윤정 사건·서형준 사건·경기남부 연쇄살인 사건" },
+  { id: 3, title: "3화 - 경기남부 연쇄살인 사건" },
+  { id: 4, title: "4화 - 경기남부 연쇄살인 사건" },
+  { id: 5, title: "5화 - 계수동 고위층 연쇄절도 사건, 한영대교 붕괴 사고" },
+  { id: 6, title: "6화 - 계수동 절도 사건, 한영대교 붕괴 사고" },
+  { id: 7, title: "7화 - 계수동 절도 사건, 신다혜 실종 사건" },
+  { id: 8, title: "8화 - 계수동 절도 사건, 신다혜 실종 사건" },
+  { id: 9, title: "9화 - 홍원동 연쇄살인사건" },
+  { id: 10, title: "10화 - 홍원동 연쇄살인사건" },
+  { id: 11, title: "11화 - 홍원동 사건, 인주시 여고생 성폭행 사건" },
+  { id: 12, title: "12화 - 인주 여고생 성폭행 사건, 안치수 살인 사건" },
+  { id: 13, title: "13화 - 인주 사건, 이재한 살인 사건" },
+  { id: 14, title: "14화 - 인주 사건, 박선우 살인 사건" },
+  { id: 15, title: "15화 - 인주 사건, 박선우 사건, 김성범 사건 등" },
+  { id: 16, title: "16화 - 김윤정 유괴 사건·진양 개발비리·이재한 실종 사건" },
 ];
 
 const season2Data = [
@@ -137,12 +151,10 @@ export default function ArchivePage() {
           >
             <EpisodeTitle>{ep.title}</EpisodeTitle>
 
-            {season === 2 && ep.available ? (
-              <AvailableTag>공개됨</AvailableTag>
-            ) : season === 2 && !ep.available ? (
+            {season === 2 && ep.available === false ? (
               <LockTag>방영 예정</LockTag>
             ) : (
-              <AvailableTag>완료</AvailableTag>
+              <AvailableTag>{season === 1 ? "완료" : "공개됨"}</AvailableTag>
             )}
           </EpisodeCard>
         ))}

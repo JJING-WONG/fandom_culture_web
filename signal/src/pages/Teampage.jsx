@@ -2,6 +2,7 @@
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import styled from "styled-components";
+import orgImg from "../assets/organization.jpeg";  // ⭐ 실제 조직도 이미지 import
 
 /* ======================
      Styled Components
@@ -20,20 +21,19 @@ const Title = styled.h1`
   color: #003976;
 `;
 
-const OrgChartPlaceholder = styled.div`
+const OrgChartImage = styled.div`
   width: 100%;
-  height: 600px;          /* 조직도 이미지 크기 대체 */
-  background-color: #e8eef7;  /* 경찰 느낌의 파스텔 블루 */
-  border: 2px dashed #003976;
   border-radius: 12px;
+  border: 2px solid #003976;
+  background-color: #f0f4fb;
 
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  font-size: 24px;
-  color: #003976;
-  font-weight: 600;
+  /* 내부 이미지 스타일 */
+  img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    object-fit: contain;
+  }
 `;
 
 export default function TeamPage() {
@@ -44,9 +44,9 @@ export default function TeamPage() {
       <PageContainer>
         <Title>팀 조직도</Title>
 
-        <OrgChartPlaceholder>
-          조직도 이미지 영역 (추후 이미지로 교체 예정)
-        </OrgChartPlaceholder>
+        <OrgChartImage>
+          <img src={orgImg} alt="팀 조직도" />
+        </OrgChartImage>
       </PageContainer>
 
       <Footer />

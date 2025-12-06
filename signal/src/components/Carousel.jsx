@@ -2,10 +2,15 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 
+// ⭐ 이미지 import
+import slide1 from "../assets/main1.jpeg";
+import slide2 from "../assets/main2.jpeg";
+import slide3 from "../assets/main3.jpeg";
+
 const CarouselWrap = styled.div`
   width: 100%;
   max-width: 1200px;
-  height: 380px;
+  height: 650px;
   margin: 40px auto;
   position: relative;
   border-radius: 20px;
@@ -15,8 +20,10 @@ const CarouselWrap = styled.div`
 const Slide = styled.div`
   width: 100%;
   height: 100%;
-  background-color: ${({ color }) => color};
-  transition: background-color 0.6s ease;
+  background-image: url(${(props) => props.image});
+  background-size: cover;
+  background-position: center;
+  transition: opacity 0.6s ease;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -26,6 +33,7 @@ const SlideText = styled.h1`
   color: white;
   font-size: 32px;
   font-weight: bold;
+  text-shadow: 0px 3px 6px rgba(0, 0, 0, 0.4);
 `;
 
 const ArrowButton = styled.button`
@@ -48,11 +56,11 @@ const ArrowButton = styled.button`
   }
 
   &.left {
-    left: -20px;
+    left: 20px;
   }
 
   &.right {
-    right: -20px;
+    right: 20px;
   }
 `;
 
@@ -74,10 +82,11 @@ const Dot = styled.div`
   transition: 0.2s;
 `;
 
+// ⭐ 이미지 기반 슬라이드 배열
 const slides = [
-  { id: 1, color: "#1a3d7c", text: "슬라이드 1" },
-  { id: 2, color: "#0d6efd", text: "슬라이드 2" },
-  { id: 3, color: "#1f8a70", text: "슬라이드 3" },
+  { id: 1, image: slide1, text: "" },
+  { id: 2, image: slide2, text: "" },
+  { id: 3, image: slide3, text: "" },
 ];
 
 export default function Carousel() {
@@ -93,15 +102,23 @@ export default function Carousel() {
 
   return (
     <CarouselWrap>
-      <ArrowButton className="left" onClick={() => setIndex((prev) => (prev - 1 + slides.length) % slides.length)}>
+      <ArrowButton
+        className="left"
+        onClick={() =>
+          setIndex((prev) => (prev - 1 + slides.length) % slides.length)
+        }
+      >
         ‹
       </ArrowButton>
 
-      <Slide color={slides[index].color}>
-        <SlideText>{slides[index].text}</SlideText>
+      <Slide image={slides[index].image}>
+        {slides[index].text && <SlideText>{slides[index].text}</SlideText>}
       </Slide>
 
-      <ArrowButton className="right" onClick={() => setIndex((prev) => (prev + 1) % slides.length)}>
+      <ArrowButton
+        className="right"
+        onClick={() => setIndex((prev) => (prev + 1) % slides.length)}
+      >
         ›
       </ArrowButton>
 
