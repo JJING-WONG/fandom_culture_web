@@ -79,7 +79,7 @@ const NoticeInfo = styled.div`
 const notices = [
   {
     id: 1,
-    title: "2025 팬미팅 서울 개최 안내",
+    title: "2026 팬미팅 서울 개최 안내",
     category: "팬미팅",
     date: "2026-07-14",
     place: "서울 올림픽홀",

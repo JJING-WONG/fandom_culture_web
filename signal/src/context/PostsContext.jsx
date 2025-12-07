@@ -7,24 +7,24 @@ import { createContext, useContext, useReducer } from "react";
 const initialPosts = [
   {
     id: 1,
-    title: "1화 - 공원 사건에서 나타난 첫 번째 복선 정리",
+    title: "2기 1화 - 첫 화에서 나온 단서 정리",
     author: "팬A",
-    date: "2025-01-03",
-    content: "1화 복선 관련 분석 내용...",
+    date: "2026-07-03",
+    content: "1화 단서 관련 분석 내용...",
   },
   {
     id: 2,
-    title: "주인공이 3화에서 한 행동의 의미 분석",
+    title: "주인공이 2화에서 한 행동의 의미 분석",
     author: "팬B",
-    date: "2025-01-05",
-    content: "3화의 행동 의미 분석 내용...",
+    date: "2026-07-05",
+    content: "2화의 행동 의미 분석 내용...",
   },
   {
     id: 3,
-    title: "용의자 X의 패턴 분석 – 5화 기준",
+    title: "3화 예상 시나리오",
     author: "팬C",
-    date: "2025-01-07",
-    content: "5화 용의자 X 분석...",
+    date: "2026-07-07",
+    content: "앞으로의 시나리오 정리 내용...",
   },
 ];
 

@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 
 // ⭐ 이미지 import
-import slide1 from "../assets/main1.jpeg";
+import slide1 from "../assets/main1.png";
 import slide2 from "../assets/main2.jpeg";
 import slide3 from "../assets/main3.jpeg";
 
