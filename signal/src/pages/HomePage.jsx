@@ -1,5 +1,6 @@
 // src/pages/HomePage.jsx
 import Header from "../components/Header";
+import NoticeBanner from "../components/NoticeBanner";
 import Carousel from "../components/Carousel";
 import Footer from "../components/Footer";
 import styled from "styled-components";
@@ -93,6 +94,7 @@ export default function HomePage() {
   return (
     <>
       <Header />
+      <NoticeBanner />
       <Carousel />
 
       <Section>
