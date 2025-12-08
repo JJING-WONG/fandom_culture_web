@@ -159,7 +159,7 @@ export default function HomePage() {
         <CardRow>
           <Card onClick={() => navigate("/archive/1/1")}>
             <CardTitle>시즌 1 대표 사건</CardTitle>
-            <CardInfo>1화 - 공원 실종 사건</CardInfo>
+            <CardInfo>1화 - 김윤정 유괴 및 살인 사건, 서형준 살인 사건</CardInfo>
           </Card>
 
           <Card onClick={() => navigate("/archive/2/1")}>
